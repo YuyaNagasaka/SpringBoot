@@ -21,6 +21,8 @@
           <th>タイトル</th>
           <th>説明</th>
           <th>キーワード</th>
+          <th>削除</th>
+          <th>編集</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +30,19 @@
           <td th:text = "${output.title}"></td>
           <td th:text = "${output.description}"></td>
           <td th:text = "${output.keyword}"></td>
+          <td>
+            <form th:action ="@{/Edit}" method = "post">
+              <input type = "submit" name = "delete" value = "削除">
+              <input type = "hidden" name ="id" th:value = "${output.id}">
+            </form>
+          </td>
+          <td>
+            <form th:action ="@{/Edit}" method = "post">
+              <input type = "submit" name = "edit" value = "編集">
+              <input type = "hidden" name ="id" th:value = "${output.id}">
+            </form>
+          </td>
+          
         </tr>
       </tbody>
     </table>
