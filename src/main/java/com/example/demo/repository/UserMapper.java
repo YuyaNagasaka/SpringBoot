@@ -6,5 +6,6 @@ import com.example.demo.object.User;
 
 @Mapper //自動的にMapperとしてDIコンテナに登録
 public interface UserMapper{
+  
   public void register(User user);
 }
