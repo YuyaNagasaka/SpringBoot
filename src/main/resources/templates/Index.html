@@ -15,5 +15,21 @@
       </nav>
     </header>
     <h1>投稿一覧ページ</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>タイトル</th>
+          <th>説明</th>
+          <th>キーワード</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each = "output:${outputIndex}">
+          <td th:text = "${output.title}"></td>
+          <td th:text = "${output.description}"></td>
+          <td th:text = "${output.keyword}"></td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
