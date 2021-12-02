@@ -11,4 +11,8 @@
   <select id = "Index" resultType = "com.example.demo.object.Output">
     select * from output
   </select>
+
+  <delete id = "Delete">
+    DELETE FROM output WHERE id = #{id} 
+  </delete>
 </mapper >
