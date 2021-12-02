@@ -12,4 +12,8 @@ public interface OutputMapper {
   public void Create(Output output);
   
   public List<Output> Index();
+  
+  public void Delete(Output output);
+  
+  public void Update(Output output);
 }
