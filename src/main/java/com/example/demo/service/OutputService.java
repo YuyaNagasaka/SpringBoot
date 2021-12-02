@@ -11,10 +11,16 @@ import com.example.demo.repository.OutputMapper;
 @Service
 public class OutputService {
   @Autowired OutputMapper mapper;
+  
   public void Create(Output output) {
 	  mapper.Create(output);
   }
+  
   public List<Output> Index() {
     return mapper.Index(); 
+  }
+  
+  public void delete(Output output) {
+	  mapper.Delete(output);
   }
 }
