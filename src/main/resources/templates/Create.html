@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>投稿</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/Create">新規投稿</a></li>
+          <li><a href="/Index">投稿一覧</a></li>
+          <li><a href="/Top">ログアウト</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>投稿ページ</h1>
+    <form method = "post" action = "/Create">
+      <div>タイトル:　<input type = "text" th:field = "${output.title}"></div>
+      <div>説明:　　　<input type = "text" th:field = "${output.description}"></div>
+      <div>キーワード:<input type = "text" th:field = "${output.keyword}"></div>
+      <div><input type = "submit" value = "投稿"></div>
+    </form>
+  </body>
+</html>
