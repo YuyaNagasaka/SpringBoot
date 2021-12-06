@@ -23,4 +23,13 @@ public class OutputService {
   public void delete(Output output) {
 	  mapper.Delete(output);
   }
+  
+  public Output edit(Output output) {
+	  return mapper.Edit(output);
+  }
+  
+  public void update(Output output) {
+	  mapper.Update(output);
+  }
+  
 }
