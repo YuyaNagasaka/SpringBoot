@@ -15,9 +15,13 @@
       </nav>
     </header>
     <h1>ログインページ</h1>
+    <p th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null" 
+    th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}">
+    ログインIDまはたパスワードが間違っています。
+    </p>
     <form method = "post" action = "/Login">
-     <div>名前:　　　<input type = "text" th:field = "${user.name}"> </div>
-     <div>パスワード:<input type = "password" th:field = "${user.password}"> </div>
+     <div>名前:　　　<input type = "text" name = "name" th:field = "${user.name}"> </div>
+     <div>パスワード:<input type = "password" name = "password" th:field = "${user.password}"> </div>
      <div><input type = "submit" value = "ログイン"> </div>
     </form>
   </body>
