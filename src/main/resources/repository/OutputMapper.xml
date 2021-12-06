@@ -15,4 +15,13 @@
   <delete id = "Delete">
     DELETE FROM output WHERE id = #{id} 
   </delete>
+
+  <select id = "Edit" resultType = "com.example.demo.object.Output">
+    SELECT * FROM output WHERE id = ${id}
+  </select>
+
+  <update id = "Update">
+    update output set title = #{title},description = #{description},keyword = #{keyword} WHERE id = #{id}
+  </update >
+
 </mapper >
