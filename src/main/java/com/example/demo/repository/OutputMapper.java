@@ -15,5 +15,7 @@ public interface OutputMapper {
   
   public void Delete(Output output);
   
+  public Output Edit(Output output);
+  
   public void Update(Output output);
 }
