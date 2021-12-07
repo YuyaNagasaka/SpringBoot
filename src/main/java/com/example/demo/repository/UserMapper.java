@@ -8,4 +8,6 @@ import com.example.demo.object.User;
 public interface UserMapper{
   
   public void register(User user);
+  
+  public User findUser(String id);
 }
