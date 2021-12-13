@@ -19,8 +19,8 @@ public class UserService {
     mapper.register(user);
   }
   
-  public User findUser(String id) {//ログイン情報取得
-    return mapper.findUser(id);
+  public User findUser(String name) {//ログイン情報取得
+    return mapper.findUser(name);
   }
 }
 

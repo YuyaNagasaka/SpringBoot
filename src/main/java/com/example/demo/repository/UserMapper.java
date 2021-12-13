@@ -9,5 +9,5 @@ public interface UserMapper{
   
   public void register(User user);
   
-  public User findUser(String id);
+  public User findUser(String name);
 }
