@@ -15,7 +15,7 @@
       </nav>
     </header>
     <h1>会員登録ページ</h1>
-    <form method = "post" action = "/Register">
+    <form method = "post" th:action = "@{/Register}">
       <div>　　　名前:<input type = "text" th:field = "${user.name}"></div>
       <div>パスワード:<input type = "password" th:field = "${user.password}"></div>
       <div><input type = "submit" value = "会員登録"></div>
