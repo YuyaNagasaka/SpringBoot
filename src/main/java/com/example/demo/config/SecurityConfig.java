@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         
         http
             .logout()//ログアウト処理
-              .logoutUrl("/Logout")
+              .logoutUrl("/Logout")//Logout 用 formの送信先と紐づけ
               .logoutSuccessUrl("/Top?Logout");
         
     }
