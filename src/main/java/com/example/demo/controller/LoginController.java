@@ -3,7 +3,6 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.object.User;
 
@@ -15,8 +14,4 @@ public class LoginController {
     return "Login";
   }
   
-  @PostMapping("/Login")
-  public String postRequest() {
-    return "redirect:/Create";
-  }
 }
