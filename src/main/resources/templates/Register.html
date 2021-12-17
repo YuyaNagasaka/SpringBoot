@@ -4,26 +4,24 @@
     <meta charset="UTF-8">
     <title>会員登録ページ</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-    <script th:src = "@{/webjars/jquery/jquery.min.js}"defer></script>
-    <script th:src = "@{/webjars/bootstrap/js/bootstrap.min.js}"defer></script>     
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="/Top">トップ</a></li>
-          <li><a href="/Login">ログイン</a></li>
-          <li><a href="/Register">会員登録</a></li>
+      <nav class="navbar navbar-dark bg-dark">
+        <ul style = "display: flex; list-style-type: none; text-align: center">
+          <li class = mr-3><a href="/Top" class = "text-white">トップ</a></li>
+          <li class = mr-3><a href="/Login" class = "text-white">ログイン</a></li>
+          <li class = mr-3><a href="/Register" class = "text-white">会員登録</a></li>
         </ul>
       </nav>
     </header>
-    <h1>会員登録ページ</h1>
+    <h1 class = "mt-5 ml-5">会員登録</h1>
     <form method = "post" th:action = "@{/Register}"  th:object="${user}">
-      <div>　　　名前:<input type = "text" th:field = "*{name}"></div>
-       <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
-      <div>パスワード:<input type = "password" th:field = "*{password}"></div>
-       <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
-      <div><input type = "submit" value = "会員登録"></div>
+      <div class = "mt-3 ml-5">名前　　　　<input type = "text" th:field = "*{name}"></div>
+      <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+      <div class = "mt-3 ml-5">パスワード　<input type = "password" th:field = "*{password}"></div>
+      <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+      <button class="btn btn-success mt-3 ml-5" type="submit">会員登録</button>
     </form>
   </body>
 </html>

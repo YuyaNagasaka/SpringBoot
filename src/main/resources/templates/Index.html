@@ -4,26 +4,24 @@
     <meta charset="UTF-8">
     <title>投稿一覧</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-    <script th:src = "@{/webjars/jquery/jquery.min.js}"defer></script>
-    <script th:src = "@{/webjars/bootstrap/js/bootstrap.min.js}"defer></script>     
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="/Create">新規投稿</a></li>
-          <li><a href="/Index">投稿一覧</a></li>
+      <nav class="navbar navbar-dark bg-dark">
+        <ul style = "display: flex; list-style-type: none; text-align: center">
+          <li class = "mr-3 mt-2"><a href="/Create" class = "text-white">新規投稿</a></li>
+          <li class =  "mt-2"><a href="/Index" class = "text-white">投稿一覧</a></li>
           <li>
             <form method = "post" th:action = "@{/Logout}">
-              <input type = "submit" value = "ログアウト">
+              <button class="btn btn-dark" type="submit">ログアウト</button>
             </form>
           </li>
         </ul>
       </nav>
-    </header>
-    <h1>投稿一覧ページ</h1>
-    <table>
-      <thead>
+    </header>     
+    <h1 class = "mt-5 ml-5">投稿一覧画面</h1>
+    <table class = "table mt-5 ml-5 mr-5">
+      <thead class="thead-light">
         <tr>
           <th>タイトル</th>
           <th>説明</th>
@@ -39,13 +37,13 @@
           <td th:text = "${output.keyword}"></td>
           <td>
             <form th:action ="@{/Edit}" method = "post">
-              <input type = "submit" name = "delete" value = "削除">
+            <button type="submit" name = "delete" value = "削除" class="btn btn-danger">削除</button>
               <input type = "hidden" name ="id" th:value = "${output.id}">
             </form>
           </td>
           <td>
             <form th:action ="@{/Edit}" method = "post">
-              <input type = "submit" name = "edit" value = "編集">
+              <button type="submit" name = "edit" value = "編集" class="btn btn-success">編集</button>
               <input type = "hidden" name ="id" th:value = "${output.id}">
             </form>
           </td>

@@ -4,33 +4,30 @@
     <meta charset="UTF-8">
     <title>投稿</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-    <script th:src = "@{/webjars/jquery/jquery.min.js}"defer></script>
-    <script th:src = "@{/webjars/bootstrap/js/bootstrap.min.js}"defer></script>     
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="/Create">新規投稿</a></li>
-          <li><a href="/Index">投稿一覧</a></li>
+      <nav class="navbar navbar-dark bg-dark">
+        <ul style = "display: flex; list-style-type: none; text-align: center">
+          <li class = "mr-3 mt-2"><a href="/Create" class = "text-white">新規投稿</a></li>
+          <li class =  "mt-2"><a href="/Index" class = "text-white">投稿一覧</a></li>
           <li>
             <form method = "post" th:action = "@{/Logout}">
-              <input type = "submit" value = "ログアウト">
+              <button class="btn btn-dark" type="submit">ログアウト</button>
             </form>
           </li>
         </ul>
-       
       </nav>
-    </header>
-    <h1>投稿ページ</h1>
+    </header>     
+    <h1  class = "mt-5 ml-5">投稿画面</h1>
     <form method = "post" th:action = "@{/Create}"  th:object="${output}">
-      <div>タイトル:　<input type = "text" th:field = "*{title} "></div>
-      <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
-      <div>説明:　　　<input type = "text" th:field = "*{description}"></div>
-      <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
-      <div>キーワード:<input type = "text" th:field = "*{keyword}"></div>
-      <div th:if="${#fields.hasErrors('keyword')}" th:errors="*{keyword}"></div>
-      <div><input type = "submit" value = "投稿"></div>
+      <div class = "mt-3 ml-5">タイトル　　<input type = "text" th:field = "*{title} "></div>
+      <div class = "mt-3 ml-5 text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+      <div class = "mt-3 ml-5">説明　　　　<input type = "text" th:field = "*{description}"></div>
+      <div class = "mt-3 ml-5 text-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+      <div class = "mt-3 ml-5">キーワード　<input type = "text" th:field = "*{keyword}"></div>
+      <div class = "mt-3 ml-5 text-danger" th:if="${#fields.hasErrors('keyword')}" th:errors="*{keyword}"></div>
+      <button class="btn btn-success  mt-3 ml-5" type="submit">投稿</button> 
     </form>
   </body>
 </html>
