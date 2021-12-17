@@ -23,7 +23,4 @@ OS            :Windows
 言語:Java  
 Javaバージョン:8  
 SpringBootバージョン:2.6.0  
-開発ツール:SpringBootDevTools/Lombok  
-テンプレートエンジン:Thymleaf  
-Web:SpringWeb  
-DB:MySQL Driver  
+主なライブラリ:Lombok/Thymleaf/SpringSecurity/MyBatis  
