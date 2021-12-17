@@ -15,9 +15,11 @@
       </nav>
     </header>
     <h1>会員登録ページ</h1>
-    <form method = "post" th:action = "@{/Register}">
-      <div>　　　名前:<input type = "text" th:field = "${user.name}"></div>
-      <div>パスワード:<input type = "password" th:field = "${user.password}"></div>
+    <form method = "post" th:action = "@{/Register}"  th:object="${user}">
+      <div>　　　名前:<input type = "text" th:field = "*{name}"></div>
+       <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+      <div>パスワード:<input type = "password" th:field = "*{password}"></div>
+       <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
       <div><input type = "submit" value = "会員登録"></div>
     </form>
   </body>

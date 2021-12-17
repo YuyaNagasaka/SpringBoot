@@ -19,11 +19,14 @@
       </nav>
     </header>
     <h1>編集ページ</h1>
-    <form method = "post" action = "/Update">
-      <div>タイトル:　<input type = "text" th:field = "${output.title}"></div>
-      <div>説明:　　　<input type = "text" th:field = "${output.description}"></div>
-      <div>キーワード:<input type = "text" th:field = "${output.keyword}"></div>
-      <input type = "hidden" name ="id" th:field = "${output.id}">
+    <form method = "post" th:action = "@{/Update}"  th:object="${output}">
+      <div>タイトル:　<input type = "text" th:field = "*{title} "></div>
+      <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+      <div>説明:　　　<input type = "text" th:field = "*{description}"></div>
+      <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+      <div>キーワード:<input type = "text" th:field = "*{keyword}"></div>
+      <div th:if="${#fields.hasErrors('keyword')}" th:errors="*{keyword}"></div>
+      <input type = "hidden" name ="id" th:field = "*{id}">
       <div><input type = "submit" value = "更新"></div>
     </form>
   </body>
