@@ -1,24 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html 
+xmlns:th="http://www.thymeleaf.org"
+>
   <head>
     <meta charset="UTF-8">
     <title>投稿</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-dark bg-dark">
-        <ul style = "display: flex; list-style-type: none; text-align: center">
-          <li class = "mr-3 mt-2"><a href="/Create" class = "text-white">新規投稿</a></li>
-          <li class =  "mt-2"><a href="/Index" class = "text-white">投稿一覧</a></li>
-          <li>
-            <form method = "post" th:action = "@{/Logout}">
-              <button class="btn btn-dark" type="submit">ログアウト</button>
-            </form>
-          </li>
-        </ul>
-      </nav>
-    </header>     
+    <header th:replace="layout/login_header::header"></header>     
     <h1  class = "mt-5 ml-5">投稿画面</h1>
     <form method = "post" th:action = "@{/Create}"  th:object="${output}">
       <div class = "mt-3 ml-5">タイトル　　<input type = "text" th:field = "*{title} "></div>

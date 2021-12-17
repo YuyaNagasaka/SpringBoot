@@ -6,15 +6,7 @@
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">    
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-dark bg-dark">
-        <ul style = "display: flex; list-style-type: none; text-align: center">
-          <li class = mr-3><a href="/Top" class = "text-white">トップ</a></li>
-          <li class = mr-3><a href="/Login" class = "text-white">ログイン</a></li>
-          <li class = mr-3><a href="/Register" class = "text-white">会員登録</a></li>
-        </ul>
-      </nav>
-    </header>
+    <header th:replace="layout/logout_header::header"></header>
     <h1 class ="mt-5 ml-5">SpringBoot Application</h1>
     <form action = "/Register" method="get">
       <button class="btn btn-success btn-lg w-50 mt-5 ml-5" type="submit" >会員登録</button>
