@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+  </head>
+  <body>
+    <header th:fragment="login_header">
+    <nav class="navbar navbar-dark bg-dark">
+      <ul style = "display: flex; list-style-type: none; text-align: center">
+        <li class = "mr-3 mt-2"><a href="/Create" class = "text-white">新規投稿</a></li>
+        <li class =  "mt-2"><a href="/Index" class = "text-white">投稿一覧</a></li>
+        <li>
+          <form method = "post" th:action = "@{/Logout}">
+            <button class="btn btn-dark" type="submit">ログアウト</button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+    </header>
+  </body>
+</html>
