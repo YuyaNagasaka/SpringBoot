@@ -1,4 +1,4 @@
-# SpringBoot
+# SpringBootApplication
 ## 製作目的  
 書籍を通じて学んだ事のアウトプット
 ## 機能  
